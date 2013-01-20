@@ -25,9 +25,9 @@
   </div>
   <div class="field">
     <%= f.label :content %><br />
-    <%= f.text_field :content %>
+    <%= f.text_area :content, :class => "ya", :cols => 100, :rows => 10 %>
   </div>
-  <div class="field">
+  <div >
     <%= f.label :date_created %><br />
     <%= f.datetime_select :date_created %>
   </div>

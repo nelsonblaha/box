@@ -51,6 +51,7 @@ margin-bottom: 3%;
 text-align: right;
 
 }
+
 #add_email a{
 font-family: 'Original Surfer', cursive;
 color: #fff;
@@ -59,4 +60,17 @@ font-size: 2.5em;
 text-decoration: none;
 margin-right: 3%;
 right: 0px;
+}
+/*.bigfield{
+height: 500px;
+width: 400px;
+}*/
+.ya{
+font-family: 'Open Sans', sans-serif;
+color: #003366;
+border: none;
+}
+.parawidth{
+width: 80%;
+text-align: justify;
 }

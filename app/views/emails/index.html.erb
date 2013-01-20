@@ -6,8 +6,9 @@
 <%= div_for(@emails, ) do |email| %>
 <h2><%= email.title %></h2>
     <div class="whitebg">
-    <%= email.content%>
-        <apan class="options">
+    <div class="parawidth"><%= email.content%></div>
+    
+        <span class="options">
         <%= link_to 'Show', email %>
         <%= link_to 'Edit', edit_email_path(email) %>
         <%= link_to 'Destroy', email, method: :delete, data: { confirm: 'Are you sure?' } %>
