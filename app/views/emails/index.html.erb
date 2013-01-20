@@ -1,4 +1,4 @@
-<h1>Listing emails</h1>
+<h1>Emails</h1>
 
 <table>
   <tr>
@@ -13,6 +13,7 @@
   </tr>
 
 <% @emails.each do |email| %>
+<div class="whitebg">
   <tr>
     <td><%= email.id %></td>
     <td><%= email.title %></td>
@@ -23,6 +24,7 @@
     <td><%= link_to 'Edit', edit_email_path(email) %></td>
     <td><%= link_to 'Destroy', email, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
+</div>
 <% end %>
 </table>
 
