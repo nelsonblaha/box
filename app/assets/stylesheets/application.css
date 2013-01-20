@@ -14,13 +14,29 @@
 body{
 background-color: #ff6600;
 color:#fff;
+font-family: 'Open Sans', sans-serif;
 }
 h1{
 	font-family: 'Original Surfer', cursive;
 	font-size:4em;
 }
+h2{
+font-family: 'Open Sans', sans-serif;
+}
+p{
+font-family: 'Open Sans', sans-serif;
+}
 .whitebg{
-background-color: white;
+background-color: #fff;
 margin-left: 3%;
 margin-right: 3%;
+padding-left: 3%;
+color: #003366;
+border-radius: 10px;
+font-family: 'Open Sans', sans-serif;
+
+}
+.options{
+position: absolute;
+right: 5%;
 }

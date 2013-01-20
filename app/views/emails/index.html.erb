@@ -1,20 +1,19 @@
 <h1>Emails</h1>
 
-<table>
-  <tr>
-    <th>Id</th>
-    <th>Title</th>
-    <th>Rank</th>
-    <th>Content</th>
-    <th>Date created</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<table >
+<%= div_for(@emails, ) do |email| %>
+<h2><%= email.title %></h2>
+    <div class="whitebg">
+    <%= email.content%>
+        <apan class="options">
+        <%= link_to 'Show', email %>
+        <%= link_to 'Edit', edit_email_path(email) %>
+        <%= link_to 'Destroy', email, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </span>
+    </div>
+</div>
+<!--   <tr class="whitebg">
 
-<% @emails.each do |email| %>
-<div class="whitebg">
-  <tr>
     <td><%= email.id %></td>
     <td><%= email.title %></td>
     <td><%= email.rank %></td>
@@ -23,11 +22,11 @@
     <td><%= link_to 'Show', email %></td>
     <td><%= link_to 'Edit', edit_email_path(email) %></td>
     <td><%= link_to 'Destroy', email, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-</div>
+  </tr> -->
+
 <% end %>
 </table>
-
+</div>
 <br />
 
 <%= link_to 'New Email', new_email_path %>
