@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id: 1
+  title: MyString
+  rank: 1
+  content: MyString
+  date_created: 2013-01-19 20:26:41
+
+two:
+  id: 1
+  title: MyString
+  rank: 1
+  content: MyString
+  date_created: 2013-01-19 20:26:41
