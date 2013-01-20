@@ -21,7 +21,9 @@ h1{
 	font-size:4em;
 }
 h2{
-font-family: 'Open Sans', sans-serif;
+font-family: 'Original Surfer', cursive;
+font-size: 2.5em;
+padding-left: 3%;
 }
 p{
 font-family: 'Open Sans', sans-serif;
@@ -31,6 +33,8 @@ background-color: #fff;
 margin-left: 3%;
 margin-right: 3%;
 padding-left: 3%;
+padding-top: 3%;
+padding-bottom: 3%;
 color: #003366;
 border-radius: 10px;
 font-family: 'Open Sans', sans-serif;
@@ -39,4 +43,20 @@ font-family: 'Open Sans', sans-serif;
 .options{
 position: absolute;
 right: 5%;
+}
+#add_email{
+display: block;
+margin-top: 5%;
+margin-bottom: 3%;
+text-align: right;
+
+}
+#add_email a{
+font-family: 'Original Surfer', cursive;
+color: #fff;
+font-size: 2.5em;
+
+text-decoration: none;
+margin-right: 3%;
+right: 0px;
 }
