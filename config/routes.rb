@@ -1,4 +1,7 @@
 Box::Application.routes.draw do
+  resources :signatures
+
+
   resources :emails
 
 

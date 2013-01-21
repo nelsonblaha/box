@@ -1,8 +1,9 @@
 <h1>Emails</h1>
 <div id="add_email"><%= link_to '+ New Email', new_email_path %></div>
+<%= link_to 'New User', new_user_path %>
 
 
-<table >
+<table>
 <%= div_for(@emails, ) do |email| %>
 <h2><%= email.title %></h2>
     <div class="whitebg">
@@ -15,6 +16,7 @@
         </span>
     </div>
 </div>
+
 <!--   <tr class="whitebg">
 
     <td><%= email.id %></td>
