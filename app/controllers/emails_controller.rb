@@ -1,6 +1,6 @@
 class EmailsController < ApplicationController
-  http_basic_authenticate_with :name => "us", :password => "pass" 
-
+  # http_basic_authenticate_with :name => "us", :password => "pass" 
+  before_filter :authenticate_user!, :except => [:show, :index]
   # GET /emails
   # GET /emails.json
   def index
@@ -22,12 +22,12 @@ class EmailsController < ApplicationController
       format.json { render json: @email }
     end
   end
-
   # GET /emails/new
   # GET /emails/new.json
   def new
-    @email = Email.new
 
+    @email = Email.new
+    before_filter :authenticate_user!
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @email }
