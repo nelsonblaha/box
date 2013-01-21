@@ -1,6 +1,6 @@
 class EmailsController < ApplicationController
   # http_basic_authenticate_with :name => "us", :password => "pass" 
-  before_filter :authenticate_user!, :except => [:show, :index]
+  # before_filter :authenticate_user!, :except => [:show, :index]
   # GET /emails
   # GET /emails.json
   def index
