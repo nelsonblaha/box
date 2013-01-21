@@ -1,11 +1,10 @@
 Box::Application.routes.draw do
+  devise_for :users
+
   resources :signatures
 
 
   resources :emails
-
-
-  resources :users
 
 
   get "welcome/index"
