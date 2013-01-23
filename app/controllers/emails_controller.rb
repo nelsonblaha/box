@@ -27,7 +27,7 @@ class EmailsController < ApplicationController
   def new
 
     @email = Email.new
-    @email.user_id = current_user.id
+    
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @email }
@@ -43,7 +43,7 @@ class EmailsController < ApplicationController
   # POST /emails.json
   def create
     @email = Email.new(params[:email])
-
+    @email.user_id = current_user.id
     respond_to do |format|
       if @email.save
         format.html { redirect_to @email, notice: 'Email was successfully created.' }
