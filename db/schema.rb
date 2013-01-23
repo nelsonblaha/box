@@ -33,9 +33,12 @@ ActiveRecord::Schema.define(:version => 20130122194922) do
     t.integer  "rank"
     t.string   "content"
     t.datetime "date_created"
+    t.integer  "user_id"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end
+
+  add_index "emails", ["user_id"], :name => "index_emails_on_user_id"
 
   create_table "signatures", :force => true do |t|
     t.string   "title"

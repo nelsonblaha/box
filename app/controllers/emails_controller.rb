@@ -27,6 +27,7 @@ class EmailsController < ApplicationController
   def new
 
     @email = Email.new
+    @email.user_id = current_user.id
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @email }
