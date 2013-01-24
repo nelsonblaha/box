@@ -8,6 +8,27 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
   # attr_accessible :title, :body
-  has_many :emails
+  
+  #dependent destroy causes an email's votes to be burned with it on the funeral pyre, Conan-style
+    has_many :votes, dependent: :destroy
+  has_many :emails, through: :votes
   has_many :signatures
+
+  def created_email(email)
+    if Vote.where(user_id:self.id,email_id:email.id,creator:true).count > 0
+      return true
+    elsif Vote.where(email_id:email.id,creator:true).count > 0
+      return nil
+    else
+      return false
+    end
+  end
+
+  def voted_for(email)
+    if Vote.where(user_id:self.id,email_id:email.id).count > 0
+      return true
+    else
+      return false
+    end
+  end
 end

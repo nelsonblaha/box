@@ -1,4 +1,7 @@
 Box::Application.routes.draw do
+  resources :votes
+
+
   devise_for :admins
 
   devise_for :users
@@ -7,6 +10,7 @@ Box::Application.routes.draw do
 
 
   resources :emails
+    match "/toggle_upvote" => "emails#toggle_upvote"
 
 
   get "welcome/index"
