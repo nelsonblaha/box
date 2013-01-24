@@ -97,4 +97,15 @@ class EmailsController < ApplicationController
         redirect_to root_path, notice: "you can only do that to emails you create!"
       end
   end
+
+  def toggle_upvote
+    email = Email.find(params[:email])
+      if current_user.voted_for(email)
+        Vote.where(user_id:current_user.id,email_id:email.id).destroy_all
+        redirect_to root_path, notice: "Down periscope!"
+      else
+        current_user.votes.create(email_id:email.id)
+        redirect_to root_path, notice: "Up, up, and away!"
+      end
+  end
 end

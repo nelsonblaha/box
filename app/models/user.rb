@@ -23,4 +23,12 @@ class User < ActiveRecord::Base
       return false
     end
   end
+
+  def voted_for(email)
+    if Vote.where(user_id:self.id,email_id:email.id).count > 0
+      return true
+    else
+      return false
+    end
+  end
 end
