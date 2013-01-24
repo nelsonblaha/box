@@ -13,8 +13,10 @@
     
         <span class="options">
         <%= link_to 'Show', email %>
-        <%= link_to 'Edit', edit_email_path(email) %>
-        <%= link_to 'Destroy', email, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% if current_user.admin || current_user.created_email(email) %>
+          <%= link_to 'Edit', edit_email_path(email) %>
+          <%= link_to 'Destroy', email, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
         </span>
     </div>
 </div>
