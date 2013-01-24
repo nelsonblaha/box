@@ -1,6 +1,7 @@
 class EmailsController < ApplicationController
   # http_basic_authenticate_with :name => "us", :password => "pass" 
   before_filter :authenticate_user!, :except => [:show, :index]
+  before_filter :check_created_email_or_is_admin, only: [:edit,:update,:destroy]
 
   # scaffold actions
 
@@ -89,4 +90,11 @@ class EmailsController < ApplicationController
         format.json { head :no_content }
       end
     end
+
+  def check_created_email_or_is_admin
+    @email = Email.find(params[:id])
+      unless current_user.admin || current_user.created_email(@email)
+        redirect_to root_path, notice: "you can only do that to emails you create!"
+      end
+  end
 end
