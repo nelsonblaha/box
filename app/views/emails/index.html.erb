@@ -14,7 +14,7 @@
     
         <span class="options">
           <!-- voting -->
-            <% if current_user.voted_for(email) %>
+            <% if current_user&&current_user.voted_for(email) %>
               <%= link_to 'Cancel vote', toggle_upvote_path(email:email) %>
             <% else %>
               <%= link_to 'Upboat', toggle_upvote_path(email:email) %>
@@ -22,7 +22,7 @@
 
           <%= link_to 'Show', email %>
 
-          <% if current_user.admin || current_user.created_email(email) %>
+          <% if current_user&&current_user.admin || current_user&&current_user.created_email(email) %>
             <%= link_to 'Edit', edit_email_path(email) %>
             <%= link_to 'Destroy', email, method: :delete, data: { confirm: 'Are you sure?' } %>
           <% end %>
