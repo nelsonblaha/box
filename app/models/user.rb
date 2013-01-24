@@ -8,6 +8,9 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
   # attr_accessible :title, :body
-  has_many :emails
+  
+  #dependent destroy causes an email's votes to be burned with it on the funeral pyre, Conan-style
+    has_many :votes, dependent: :destroy
+  has_many :emails, through: :votes
   has_many :signatures
 end

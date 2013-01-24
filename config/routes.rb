@@ -1,4 +1,7 @@
 Box::Application.routes.draw do
+  resources :votes
+
+
   devise_for :admins
 
   devise_for :users
