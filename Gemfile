@@ -11,7 +11,7 @@ gem 'rails', '3.2.11'
 end
 
 group :development, :test do
-  gem "sqlite3-ruby", "~> 1.3.0", :require => "sqlite3"
+  gem "sqlite3"
 end
   gem 'execjs'
   gem 'therubyracer'
