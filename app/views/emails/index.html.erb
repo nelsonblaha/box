@@ -9,6 +9,7 @@
 <%= div_for(@emails, ) do |email| %>
 <h2><%= email.title %></h2>
 <h3 ><%= pluralize(email.votes.count, "Upvote") %></h3>
+<h3><%= email.title %>
     <div class="whitebg">
     <div class="parawidth"><%= email.content%></div>
     

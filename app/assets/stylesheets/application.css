@@ -13,20 +13,22 @@
  */
 body{
 /*background-color: #ff6600;*/
-background-color: #fff;
-background-image: /assets/purty_wood.png;
-background-repeat: repeat-x;
-color:#000000;
+background-image: url('purty_wood.png');
+background-repeat: repeat;
+color:#fff;
 font-family: 'Open Sans', sans-serif;
 }
 h1{
 	font-family: 'Michroma', sans-serif;
-
+	text-shadow: 3px 4px 6px rgba(000, 000, 000, 0.4);
 	font-size:4em;
+}
+a{
+	text-shadow: 3px 4px 6px rgba(000, 000, 000, 0.4);
 }
 h2{
 font-family: 'Michroma', sans-serif;
-
+text-shadow: 3px 4px 6px rgba(000, 000, 000, 0.4);
 font-size: 2.5em;
 padding-left: 3%;
 }
@@ -43,10 +45,13 @@ margin-right: 3%;
 padding-left: 3%;
 padding-top: 3%;
 padding-bottom: 3%;
-color: #003366;
-border-radius: 10px;
+/*color: #003366;*/
+color: #000;
+border-radius: 4px;
 font-family: 'Open Sans', sans-serif;
-
+ -webkit-box-shadow:0 3px 4px rgba(0, 0, 0, 0.3);
+       -moz-box-shadow:0 3px 4px rgba(0, 0, 0, 0.3);
+            box-shadow:0 3px 4px rgba(0, 0, 0, 0.3);
 }
 .options{
 position: absolute;
@@ -62,7 +67,7 @@ text-align: right;
 
 #add_email a{
 font-family: 'Michroma', sans-serif;
-color: #000000;
+color: #fff;
 font-size: 2.5em;
 line-height: 2.5em;
 text-decoration: none;
@@ -89,7 +94,7 @@ margin-left: 10%;
 }
 .whitelink a{
 font-family: 'Michroma', sans-serif;
-color: #000000;
+color: #fff;
 
 font-size: 2.5em;
 line-height: 2.5em;
