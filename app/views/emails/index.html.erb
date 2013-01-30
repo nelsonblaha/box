@@ -4,45 +4,47 @@
 <div id="add_email"><%= link_to '+ New Email', new_email_path %></div>
 
 
+<div class="main">
+    <table>
 
-<table>
-<%= div_for(@emails, ) do |email| %>
-<h2><%= email.title %></h2>
-<h3 ><%= pluralize(email.votes.count, "Upvote") %></h3>
-<h3><%= email.title %></h3>
-    <div class="whitebg">
-    <div class="parawidth"><%= email.content%></div>
+            <%= div_for(@emails, ) do |email| %>
+            <h2 class="padding-left"><%= email.title %></h2>
+            <h3 class="padding-left" ><%= pluralize(email.votes.count, "Upvote") %></h3>
+                <div class="whitebg">
+                <div class="parawidth"><%= email.content%></div>
+                
+                    <span class="options">
+                      <!-- voting -->
+                        <% if current_user&&current_user.voted_for(email) %>
+                          <%= link_to 'Cancel vote', toggle_upvote_path(email:email) %>
+                        <% else %>
+                          <%= link_to 'Upvote', toggle_upvote_path(email:email) %>
+                        <% end %>
+
+                      <%= link_to 'Show', email %>
+
+                      <% if current_user&&current_user.admin || current_user&&current_user.created_email(email) %>
+                        <%= link_to 'Edit', edit_email_path(email) %>
+                        <%= link_to 'Destroy', email, method: :delete, data: { confirm: 'Are you sure?' } %>
+                      <% end %>
+
+                    </span>
+                </div>
+            </div>
+
+    <% end %>
+    </table>
+
     
-        <span class="options">
-          <!-- voting -->
-            <% if current_user&&current_user.voted_for(email) %>
-              <%= link_to 'Cancel vote', toggle_upvote_path(email:email) %>
-            <% else %>
-              <%= link_to 'Upvote', toggle_upvote_path(email:email) %>
-            <% end %>
-
-          <%= link_to 'Show', email %>
-
-          <% if current_user&&current_user.admin || current_user&&current_user.created_email(email) %>
-            <%= link_to 'Edit', edit_email_path(email) %>
-            <%= link_to 'Destroy', email, method: :delete, data: { confirm: 'Are you sure?' } %>
-          <% end %>
-
-        </span>
-    </div>
+    <br />
+    <% if user_signed_in? %>
+      <li>
+      <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+      </li>
+    <% else %>
+      <li>
+      <%= link_to('Login', new_user_session_path)  %>  
+      </li>
+    <% end %>
 </div>
-
-<% end %>
-</table>
 </div>
-<br />
-<% if user_signed_in? %>
-  <li>
-  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
-  </li>
-<% else %>
-  <li>
-  <%= link_to('Login', new_user_session_path)  %>  
-  </li>
-<% end %>
-

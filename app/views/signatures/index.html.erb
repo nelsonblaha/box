@@ -1,27 +1,22 @@
-<h1>Listing signatures</h1>
-
+<h1>Signatures</h1>
+<div class="main">
 <table>
-  <tr>
-    <th>Title</th>
-    <th>Content</th>
-    <th>Id</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
 <% @signatures.each do |signature| %>
-  <tr>
-    <td><%= signature.title %></td>
-    <td><%= signature.content %></td>
-    <td><%= signature.id %></td>
-    <td><%= link_to 'Show', signature %></td>
-    <td><%= link_to 'Edit', edit_signature_path(signature) %></td>
-    <td><%= link_to 'Destroy', signature, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+<h2><%= signature.title %></h2>
+  
+    <div class="whitebg">
+      <div class="parawidth"><%= signature.content%></div>
+    <span class="options">
+    <%= link_to 'Show', signature %>
+    <%= link_to 'Edit', edit_signature_path(signature) %>
+    <%= link_to 'Destroy', signature, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </span>
+</div>
 <% end %>
 </table>
 
 <br />
 
 <%= link_to 'New Signature', new_signature_path %>
+</div>
