@@ -9,4 +9,14 @@ class Email < ActiveRecord::Base
   		creator_vote = Vote.where(email_id:self.id,creator:true).first
   		return creator_vote.user
   end
+
+  def humorous_rank
+  	if self.votes.count < 2
+  		"'Cool story, bro...'"
+  	elsif 1 < self.votes.count < 4
+  		"One hit wonder"
+  	else
+  		"Essential"
+  	end
+  end
 end
