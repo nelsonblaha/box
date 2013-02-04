@@ -6,6 +6,7 @@ class Email < ActiveRecord::Base
 
   def creator
   	#find the user who created the email and return it to wherever this method was called
-  		return Vote.where(email_id:self.id,creator:true).first
+  		creator_vote = Vote.where(email_id:self.id,creator:true).first
+  		return creator_vote.user
   end
 end
