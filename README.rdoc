@@ -1,4 +1,6 @@
-== Box is an voteable email repository.
+== Box is a voteable email repository.
+This is most likely useful for customer-service type settings, where a large amount of similar answers are sent to clients. But it could be used for any type of text.
+
 The goal for Box is to have:
 1. A more creative name
 2. A repository where a group (think an office), which uses a lot of template emails, can add their commonly used emails.
@@ -7,4 +9,4 @@ The goal for Box is to have:
 5. With one click on an email in the repository, the email, and the user's signature will be copied to the clipboard, ready for pasting. 
 6. Groups are able to keep the group repository private and invite-only to users.
 7. Users have secure logins.
-8. This is most likely useful for customer-service type settings, where a large amount of similar answers are sent to clients. But it could be used for any type of text.
+8. Direct mailing from the app.
