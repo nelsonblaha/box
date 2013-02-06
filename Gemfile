@@ -8,7 +8,9 @@ gem 'rails', '3.2.11'
 
   gem 'sqlite3'
   gem 'execjs'
-  gem 'therubyracer'
+
+#  You don't need this, far as I can tell.
+#  gem 'therubyracer'
 
 # Gems used only for assets and not required
 # in production environments by default.
