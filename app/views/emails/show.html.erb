@@ -1,3 +1,4 @@
+<div class="center vertical_middle">
 <p>
   <b>Title:</b>
   <%= @email.title %>
@@ -8,23 +9,16 @@
 	<%= @email.creator.name %>
 </p>
 
-<p>
-  <b>Rank:</b>
-  <%= @email.rank %>
-</p>
 
 <p>
   <b>Content:</b>
   <%= @email.content %>
 </p>
 
-<p>
-  <b>Date created:</b>
-  <%= @email.date_created %>
-</p>
 
 <% if current_user.admin || current_user.created_email(@email) %>
   <%= link_to 'Edit', edit_email_path(@email) %> |
 <% end %>
 
-<%= link_to 'Back', emails_path %>
+<%= link_to 'Emails', emails_path %>
+</div>
