@@ -31,4 +31,13 @@ class User < ActiveRecord::Base
       return false
     end
   end
+
+  def may_modify(email)
+    if self.admin || self.created_email(email)
+      true
+    else
+      false
+    end
+  end
+  
 end
