@@ -16,7 +16,7 @@
 </p>
 
 
-<% if current_user.admin || current_user.created_email(@email) %>
+<% if current_user && current_user.may_modify(@email) %>
   <%= link_to 'Edit', edit_email_path(@email) %> |
 <% end %>
 

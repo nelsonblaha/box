@@ -24,7 +24,7 @@
 
                       <%= link_to 'Show', email %>
 
-                      <% if current_user&&current_user.admin || current_user&&current_user.created_email(email) %>
+                      <% if current_user&&current_user.may_modify(email) %>
                         <%= link_to 'Edit', edit_email_path(email) %>
                         <%= link_to 'Destroy', email, method: :delete, data: { confirm: 'Are you sure?' } %>
                       <% end %>
