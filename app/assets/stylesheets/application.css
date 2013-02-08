@@ -26,6 +26,7 @@ h1{
 a{
 	color: #fff;
 	text-shadow: 3px 4px 6px rgba(000, 000, 000, 0.4);
+
 }
 h2{
 font-family: 'Michroma', sans-serif;
@@ -52,26 +53,25 @@ font-family: 'Open Sans', sans-serif;
  -webkit-box-shadow:0 3px 4px rgba(0, 0, 0, 0.3);
        -moz-box-shadow:0 3px 4px rgba(0, 0, 0, 0.3);
             box-shadow:0 3px 4px rgba(0, 0, 0, 0.3);
+overflow: hidden;
 }
 .whitebg a{
-  
+  display: inline-block;
 
 	color: #666;
 }
 .options{
 position: absolute;
 margin-top: 1%;
+padding-bottom: 2%;
 right: 5%;
+display: block;
 }
 #add_email a{
 display: block;
 margin-top: 5%;
 margin-bottom: 3%;
 text-align: right;
-
-}
-
-#add_email a{
 font-family: 'Michroma', sans-serif;
 color: #fff;
 font-size: 2.5em;
@@ -122,17 +122,21 @@ margin-left: 3%;
 margin-right: 3%;
 }
 
-@media screen and (max-width: 850px){
-  h1{
-	font-size:6em;
-	line-height: 6em;
+@media screen and (max-width: 1000px){
+h1{
+	font-size: 12em;
+	line-height: 1.5em;
+}
+  h2{
+	font-size:3em;
+	line-height: 1.5em;
 }
   h3{
 	font-size:3em;
 	line-height: 1.5em;
 }
 p{
-font-size:9em;
+font-size:6em;
 }
 
 .parawidth{
@@ -141,9 +145,20 @@ font-size:3em;
 line-height: 1.5em;
 }
 
+.options{
+display: inline-block;
+position: absolute;
+margin-top: 1%;
+margin-left: auto;
+margin-right: auto;
+overflow: hidden;
 
-
-
+}
+.options a{
+font-size:1em;
+line-height: 1em;
+display: inline-block;
+}
 
 
 

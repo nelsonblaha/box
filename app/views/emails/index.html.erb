@@ -14,7 +14,7 @@
                 <div class="whitebg">
                 <div class="parawidth"><%= email.content%></div>
                 
-                    <span class="options">
+                    <div class="options">
                       <!-- voting -->
                         <% if current_user&&current_user.voted_for(email) %>
                           <%= link_to 'Cancel vote', toggle_upvote_path(email:email) %>
@@ -29,7 +29,7 @@
                         <%= link_to 'Destroy', email, method: :delete, data: { confirm: 'Are you sure?' } %>
                       <% end %>
 
-                    </span>
+                    </div>
                 </div>
             </div>
 
