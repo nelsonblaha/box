@@ -42,6 +42,7 @@ font-family: 'Open Sans', sans-serif;
 background-color: #fff;
 
 padding-left: 3%;
+padding-right: 3%;
 padding-top: 3%;
 padding-bottom: 3%;
 /*color: #003366;*/
@@ -90,7 +91,7 @@ border: none;
 }
 .parawidth{
 width: 100%;
-text-align: justify;
+
 }
 .spike1{
 position: absolute;
@@ -119,4 +120,33 @@ margin-top: 23%;
 .main{
 margin-left: 3%;
 margin-right: 3%;
+}
+
+@media screen and (max-width: 850px){
+  h1{
+	font-size:6em;
+	line-height: 6em;
+}
+  h3{
+	font-size:3em;
+	line-height: 1.5em;
+}
+p{
+font-size:9em;
+}
+
+.parawidth{
+width: 100%;
+font-size:3em;
+line-height: 1.5em;
+}
+
+
+
+
+
+
+
+
+
 }

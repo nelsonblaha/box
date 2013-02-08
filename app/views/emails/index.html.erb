@@ -10,7 +10,7 @@
             <%= div_for(@emails, ) do |email| %>
             <h2 class="padding-left"><%= email.title %></h2>
             <h3>Created by <%= email.creator.name %></h3>
-            <h3 class="padding-left" ><%= pluralize(email.votes.count, "Upvote") %> - <%= email.humorous_rank %></h3>
+            <h3 class="padding-left" ><%= pluralize(email.votes.count, "Upvote") %></h3>
                 <div class="whitebg">
                 <div class="parawidth"><%= email.content%></div>
                 
