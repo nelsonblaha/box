@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
     has_many :votes, dependent: :destroy
   has_many :emails, through: :votes
   has_many :signatures
-
+   has_many :groups, :through => :memberships
   def created_email(email)
     if Vote.where(user_id:self.id,email_id:email.id,creator:true).count > 0
       return true
