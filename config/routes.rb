@@ -7,7 +7,7 @@ Box::Application.routes.draw do
   devise_for :users
 
   resources :signatures
-
+  resources :groups
 
   resources :emails
     match "/toggle_upvote" => "emails#toggle_upvote"
