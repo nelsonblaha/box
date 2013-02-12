@@ -9,6 +9,8 @@ class EmailsController < ApplicationController
     # GET /emails.json
     def index
       @emails = Email.all
+      @emails = Email.search(params[:search])
+
 
       respond_to do |format|
         format.html # index.html.erb

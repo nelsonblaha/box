@@ -4,6 +4,16 @@ class Email < ActiveRecord::Base
   has_many :votes, dependent: :destroy
   has_many :users, through: :votes
 
+  def self.search(search)
+    if search
+      where('title LIKE ?', "%#{search}%")
+    else
+      all
+    end
+  end
+
+
+end 
   def creator
   	#find the user who created the email and return it to wherever this method was called
   		creator_vote = Vote.where(email_id:self.id,creator:true).first
