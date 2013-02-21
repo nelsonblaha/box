@@ -10,9 +10,10 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
   
   #dependent destroy causes an email's votes to be burned with it on the funeral pyre, Conan-style
-    has_many :votes, dependent: :destroy
-  has_many :emails, through: :votes
-  has_many :signatures
+   has_many :votes, dependent: :destroy
+   has_many :emails, through: :votes
+   has_many :signatures
+   has_many :memberships
    has_many :groups, through:  :memberships
   def created_email(email)
     if Vote.where(user_id:self.id,email_id:email.id,creator:true).count > 0
