@@ -1,6 +1,8 @@
 class GroupsController < ApplicationController
   # GET /groups
   # GET /groups.json
+  before_filter :check_admin, only: [:create,:destroy, :update]
+
   def index
     @groups = Group.all
 
@@ -78,6 +80,18 @@ class GroupsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to groups_url }
       format.json { head :no_content }
+    end
+  end
+
+  def current_user_join
+    @group = Group.find(params[:group])
+
+    membership = Membership.where(user_id:current_user.id, group_id:@group.id).first_or_create
+
+    if membership
+      redirect_to @group, notice: "You have joined "+@group.title
+    else
+      redirect_to root_url, notice: "oops!"
     end
   end
 end

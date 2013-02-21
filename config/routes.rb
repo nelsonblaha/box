@@ -8,6 +8,7 @@ Box::Application.routes.draw do
 
   resources :signatures
   resources :groups
+    match "/join_group" => "groups#current_user_join"
 
   resources :emails
     match "/toggle_upvote" => "emails#toggle_upvote"
