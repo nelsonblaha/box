@@ -1,29 +1,49 @@
-<h1>Listing groups</h1>
+<h1>Groups</h1>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Active</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
-<% @groups.each do |group| %>
-  <tr>
-    <td><%= group.title %></td>
-    <td><%= group.description %></td>
-    <td><%= group.active %></td>
-    <td><%= link_to 'Show', group %></td>
-    <td><%= link_to 'Edit', edit_group_path(group) %></td>
-    <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+<% if current_user && current_user.admin %>
+<div id="add_one"><%= link_to '+ Create group', new_group_path %></div>
 <% end %>
-</table>
+<%= link_to 'groups', groups_path %>
 
-<br />
 
-<% if current_user.admin %>
-  <%= link_to 'New Group', new_group_path %>
-<% end %>
+
+
+<div class="main">
+    <table>
+
+            <%= div_for(@groups) do |group| %>
+            <h2 class="padding-left"><%= group.title %></h2>
+           
+                <div class="whitebg">
+                <div class="parawidth"><%= group.description %></div>
+                
+                    <div class="options">
+
+                      <%= link_to 'Show', group %>
+
+                      <% if current_user&&current_user.may_modify(group) %>
+                        <%= link_to 'Edit', edit_group_path(group) %>
+                        <%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %>
+                      <% end %>
+
+                    </div>
+                </div>
+            </div>
+
+    <% end %>
+    </table>
+
+    
+    <br />
+    <% if user_signed_in? %>
+      <li>
+      <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+      </li>
+    <% else %>
+      <li>
+      <%= link_to('Login', new_user_session_path)  %>  
+      </li>
+    <% end %>
+</div>
+</div>
