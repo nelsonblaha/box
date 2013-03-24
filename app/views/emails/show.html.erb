@@ -15,6 +15,17 @@
   <%= @email.content %>
 </p>
 
+<button class="embed" id="copy-button-<%= @email.id.to_s %>" data-clipboard-text="<%= @email.content %>" title="Click to copy me.">COPY</button>
+
+<script type="text/javascript">
+  var clip = new ZeroClipboard( document.getElementById("copy-button-<%= @email.id.to_s %>"), {
+    moviePath: "/ZeroClipboard.swf"
+  } );
+
+  clip.on( 'complete', function(client, args) {
+    alert("Copied text to clipboard!");
+  } );
+</script>
 
 <% if current_user && current_user.may_modify(@email) %>
   <%= link_to 'Edit', edit_email_path(@email) %> |
